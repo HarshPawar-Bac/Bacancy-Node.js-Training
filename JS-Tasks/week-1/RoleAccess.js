@@ -3,6 +3,10 @@ const USER = 'USER';
 const MANAGER = 'MANAGER';
 
 function GrantAccess(role) {
+
+  if(typeof role !== 'string')
+    return 'invalid role'
+
   switch (role) {
     case ADMIN:
       console.log(`${ADMIN} -> Full Access`);

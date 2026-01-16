@@ -1,9 +1,16 @@
 
 function calculateTotalPrice(price, quantity){
-    if(isNaN(quantity) || quantity === 0)
-        return 'invalid quantity';
-    if(isNaN(price) || price === 0)
-        return 'invalid price';
+    if (typeof price !== "number" || Number.isNaN(price) || price < 0) {
+      throw new Error("Invalid price");
+    }
+
+    if (
+      typeof quantity !== "number" ||
+      Number.isNaN(quantity) ||
+      quantity <= 0
+    ) {
+      throw new Error("Invalid quantity");
+    }
 
     return price * quantity;
 }
