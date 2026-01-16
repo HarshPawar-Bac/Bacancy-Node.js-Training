@@ -3,19 +3,29 @@ const save20 = 'SAVE20';
 
 const price = 999;
 
-const regx = 'SAVE'
+const regx = /^SAVE(\d{1,2})$/;
 
 function applyCoupon(price, coupon){
 
-    if(!coupon.includes(regx))
+    if (typeof price !== "number" || price <= 0) {
+      throw new Error("Invalid price");
+    }
+
+    if (typeof coupon !== "string") {
+      return price;
+    }
+
+    const match = coupon.match(regx);
+
+    if(!match){
         return price;
+    }
 
-    let split = coupon.split('SAVE');
-    let discount = Number(split[1]);
+    let discount = Number(match[1]);
 
-    let disPrice = price - (discount*price/100);
+    const discountedPrice = price - (price * discount) / 100;
 
-    return `${coupon} => ${disPrice}`
+    return `${coupon} => ${discountedPrice}`;
 }
 
 console.log(applyCoupon(1000, save10));
