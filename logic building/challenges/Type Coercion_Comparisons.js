@@ -4,7 +4,7 @@ function trickyComparisons() {
   console.log(null == undefined);
   console.log(null === undefined);
   console.log([] == "");
-  console.log([] === "");
+  // console.log([] === "");
   console.log({} == {});
 }
 
