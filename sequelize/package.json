@@ -12,7 +12,8 @@
     "migrate:undo": "sequelize-cli db:migrate:undo",
     "migration:create": "sequelize-cli migration:generate --name",
     "seed": "sequelize-cli db:seed:all",
-    "seed:create": "sequelize-cli seed:generate --name"
+    "seed:create": "sequelize-cli seed:generate --name",
+    "seed:file": "sequelize-cli db:seed --seed"
 
   },
   "keywords": [],

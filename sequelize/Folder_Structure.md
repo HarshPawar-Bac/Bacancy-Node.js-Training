@@ -1,0 +1,36 @@
+```
+└── 📁sequelize
+    └── 📁config
+        ├── .sequelizerc
+        ├── config.js
+    └── 📁migrations
+        ├── 20260211114930-create-users-table.js
+        ├── 20260211121627-add-role-to-users.js
+        ├── 20260212055043-create-products-table.js
+    └── 📁seeders
+        ├── 20260211125056-demo-users.js
+        ├── 20260212055625-demo-products.js
+    └── 📁src
+        └── 📁config
+            ├── database.ts
+        └── 📁controllers
+            ├── product.controller.ts
+            ├── user.controller.ts
+        └── 📁models
+            ├── Product.ts
+            ├── User.ts
+        └── 📁repositories
+            ├── product.repository.ts
+            ├── user.repository.ts
+        └── 📁routes
+            ├── product.routes.ts
+            ├── user.routes.ts
+        └── 📁services
+            ├── product.service.ts
+            ├── user.service.ts
+        ├── server.ts
+    ├── .env
+    ├── package-lock.json
+    ├── package.json
+    └── tsconfig.json
+```

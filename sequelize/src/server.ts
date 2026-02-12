@@ -1,20 +1,19 @@
-import express from 'express'
-import {sequelize} from './config/database'
+import express from "express";
+import { sequelize } from "./config/database";
+import userRoutes from "./routes/user.routes";
+import productRoutes from "./routes/product.routes";
 
 const app = express();
+app.use(express.json());
+
+app.use("/api/users", userRoutes);
+app.use("/api/products", productRoutes);
 
 sequelize
   .authenticate()
-  .then(() => {
-    console.log("Database connected successfully");
-  })
-  .catch((err) => console.error("Unable to connect:", err));
+  .then(() => console.log("DB Connected"))
+  .catch(console.error);
 
-
-app.get('/', (req, res) => {
-    res.json({message: 'Server is up and running!'})
-})
-
-app.listen(3000, ()=> {
-    console.log('Server is running on PORT 3000')
-})
+app.listen(3000, () => {
+  console.log("Server running on 3000");
+});
